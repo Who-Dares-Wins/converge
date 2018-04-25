@@ -7,16 +7,26 @@
 <table>
   <thead>
     <th>Title</th>
+    <th>Actions</th>
   </thead>
 
   <tbody>
     {{#each model as |doctrine|}}
       <tr>
         <td>{{doctrine.name}}</td>
+        
         <td>
-          <button {{action (route-action 'saveDoctrine' doctrine)}}>
-            Save
-          </button>
+          {{#if doctrine.hasDirtyAttributes}}
+            <button {{action (route-action 'saveDoctrine' doctrine)}}>
+              Save
+            </button>
+          {{/if}}
+
+          {{#if doctrine.id}}
+            <button {{action (route-action 'deleteDoctrine' doctrine)}}>
+              Delete
+            </button>
+          {{/if}}
         </td>
       </tr>
     {{/each}}
