@@ -1,0 +1,26 @@
+<h1>Doctrine</h1>
+
+{{#if hasDoctrines}}
+  <h4>{{model.length}} doctrine(s) available</h4>
+{{/if}}
+
+<table>
+  <thead>
+    <th>Title</th>
+  </thead>
+
+  <tbody>
+    {{#each model as |doctrine|}}
+      <tr>
+        <td>{{doctrine.name}}</td>
+        <td>
+          <button {{action (route-action 'saveDoctrine' doctrine)}}>
+            Save
+          </button>
+        </td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>
+
+<button {{action (route-action 'createDoctrine')}}>Create doctrine</button>
