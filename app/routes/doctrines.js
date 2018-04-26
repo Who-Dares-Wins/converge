@@ -9,7 +9,10 @@ export default Route.extend({
   actions: {
     createDoctrine() {
       this.get('store').createRecord('doctrine', {
-        name: 'New doctrine'
+        name: 'New doctrine',
+        description: 'A description for this doctrine',
+        priority: 1,
+        readiness: 50
       });
     },
 

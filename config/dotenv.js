@@ -3,7 +3,7 @@ module.exports = function(env) {
   return {
     clientAllowedKeys: ['API_URL'],
 
-    failOnMissingKey: true, 
+    failOnMissingKey: false, 
   };
 
 };
