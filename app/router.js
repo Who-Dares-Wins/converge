@@ -9,6 +9,8 @@ const Router = EmberRouter.extend({
 Router.map(function() {
   this.route('doctrines');
   this.route('fittings');
+  this.route('authorize');
+  this.route('home');
 });
 
 export default Router;

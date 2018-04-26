@@ -1,7 +1,12 @@
 <div class="ui grid container">
 
   <div class="sixteen wide column">
-    {{nav-bar}}
+    {{#if account}}
+      {{nav-bar
+        account=account
+        logout=(route-action 'logout')
+        }}
+    {{/if}}
 
     {{outlet}}
   </div>

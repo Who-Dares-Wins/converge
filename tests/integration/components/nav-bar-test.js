@@ -9,10 +9,24 @@ test('it renders', function(assert) {
   // Set any properties with this.set('myProperty', 'value');
   // Handle any actions with this.on('myAction', function(val) { ... });
 
+  // Quoteless action provided by parent
+  this.set('logout', () => {});
+
+  this.set('account', {
+    name: 'The Mittani'
+  });
+
   // Template block usage:
   this.render(hbs`
-    {{nav-bar}}
+    {{nav-bar
+      account=account
+      logout=logout}}
   `);
 
-  assert.equal(this.$('a.item').length, 2, 'renders all items');
+  assert.equal(this.$('a.item').length, 3, 'renders all nav options');
+  assert.equal(
+    this.$("[data-test-id='account-name']").text().trim(),
+    'The Mittani',
+    'renders name of logged in character'
+  );
 });

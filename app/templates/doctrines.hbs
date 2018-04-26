@@ -1,5 +1,6 @@
+<div class="ui menu secondary">
+  <div class="header item">Show</div>
 
-<div class="ui menu">
   <a class="active item">
     Active
   </a>
@@ -17,7 +18,10 @@
     </div>
 
     <div class="item">
-      <button class="ui button primary" {{action (route-action 'createDoctrine')}}>Create doctrine</button>
+      <button class="ui right labeled icon button green" {{action (route-action 'createDoctrine')}}>
+        <i class="plus icon"></i>
+        Doctrine
+      </button>
     </div>
   </div>
 
@@ -54,13 +58,13 @@
 
         <td>
           {{#if doctrine.hasDirtyAttributes}}
-            <button class="ui button" {{action (route-action 'saveDoctrine' doctrine)}}>
+            <button class="ui button small" {{action (route-action 'saveDoctrine' doctrine)}}>
               Save
             </button>
           {{/if}}
 
           {{#if doctrine.id}}
-            <button class="ui button negative" {{action (route-action 'deleteDoctrine' doctrine)}}>
+            <button class="ui button small negative" {{action (route-action 'deleteDoctrine' doctrine)}}>
               Delete
             </button>
           {{/if}}
