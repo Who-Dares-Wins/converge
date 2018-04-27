@@ -15,21 +15,19 @@ export default Route.extend({
 
   async afterModel() {
     let account = this.get('account');
-    let character;
 
     if (account)
       return;
 
     try {
       let response = await this.get('ajax').request('/auth/whoami');
-      character = response.character;
+      account = response.account;
     } catch(e) {
       this.transitionTo('authorize');
     }
 
-    if (character) {
-      this.get('session').create(character);
-    }
+    if (account)
+      this.get('session').create(account);
   },
 
   error(error) {

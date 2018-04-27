@@ -4,8 +4,8 @@ export default Service.extend({
 
   account: null,
 
-  create(character) {
-    this.set('account', character);
+  create(account) {
+    this.set('account', account);
   },
 
   destroy() {

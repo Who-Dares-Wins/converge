@@ -13,7 +13,9 @@ test('it renders', function(assert) {
   this.set('logout', () => {});
 
   this.set('account', {
-    name: 'The Mittani'
+    mainCharacter: {
+      name: 'The Mittani'
+    }
   });
 
   // Template block usage:
@@ -25,8 +27,8 @@ test('it renders', function(assert) {
 
   assert.equal(this.$('a.item').length, 3, 'renders all nav options');
   assert.equal(
-    this.$("[data-test-id='account-name']").text().trim(),
+    this.$("[data-test-id='main-character-name']").text().trim(),
     'The Mittani',
-    'renders name of logged in character'
+    'renders name of session main character'
   );
 });
