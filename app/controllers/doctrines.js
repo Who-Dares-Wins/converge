@@ -3,6 +3,11 @@ import { computed } from '@ember/object';
 
 export default Controller.extend({
 
+  queryParams: [
+    'corporation',
+    // 'alliances'
+  ],
+
   // Will be determined by session service later on
   isAdmin: true,
 

@@ -1,3 +1,16 @@
+<div class="ui segment">
+  <div class="ui header">
+    {{!-- <i class="circular users icon"></i> --}}
+    <div class="ui image">
+      <img src={{corporation-image model.corporationId}} />
+    </div>
+
+    <div class="middle aligned content">
+      {{model.name}}
+    </div>
+  </div>
+</div>
+
 <div class="ui menu secondary">
   <div class="header item">Show</div>
 
@@ -18,10 +31,10 @@
     </div>
 
     <div class="item">
-      <button class="ui right labeled icon button green" {{action (route-action 'createDoctrine')}}>
+      {{!-- <button class="ui right labeled icon button green" {{action (route-action 'createDoctrine')}}>
         <i class="plus icon"></i>
         Doctrine
-      </button>
+      </button> --}}
     </div>
   </div>
 </div>
@@ -41,7 +54,7 @@
   </thead>
 
   <tbody>
-    {{#each model as |doctrine|}}
+    {{#each model.doctrines as |doctrine|}}
       <tr>
         <td>{{doctrine.priority}}</td>
 

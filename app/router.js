@@ -11,6 +11,10 @@ Router.map(function() {
   this.route('authorize');
   this.route('doctrines');
   this.route('fittings');
+  this.route('alliance');
+
+  this.route('corporation', { path: '/corporation/:id' });
+  this.route('corporation.doctrines', { path: '/corporation/:id/doctrines' });
 });
 
 export default Router;

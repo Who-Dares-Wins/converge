@@ -1,6 +1,6 @@
 import DS from 'ember-data';
 
-const { attr, hasMany } = DS;
+const { attr, belongsTo, hasMany } = DS;
 
 export default DS.Model.extend({
 
@@ -13,6 +13,10 @@ export default DS.Model.extend({
   readiness: attr('number'),
 
   // Associations
+
+  corporation: belongsTo('corporation'),
+
+  alliance: belongsTo('alliance'),
 
   fittings: hasMany('fitting')
 

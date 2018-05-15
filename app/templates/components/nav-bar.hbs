@@ -5,14 +5,15 @@
 <div class="right compact menu">
   <div class="ui inline simple dropdown item">
     <div class="text">
-      <img class="ui avatar image" src={{character-portrait id=account.mainCharacter.characterId size=64}} />
-
-      <span data-test-id="main-character-name">{{account.mainCharacter.name}}</span>
+      {{#each account.characters as |character|}}
+        <img class="ui avatar image" src={{character-portrait id=character.characterId size=64}} />
+      {{/each}}
     </div>
 
     <i class="dropdown icon"></i>
 
     <div class="menu">
+      <a href="/api/auth/authorize?account={{account.id}}" class="item">Link another character</a>
       <div class="item" {{action logout}}>Log out</div>
     </div>
   </div>

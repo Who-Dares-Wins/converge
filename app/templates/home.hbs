@@ -1,5 +1,69 @@
-<div class="ui large message">
-  Good day, commander.
+<div class="ui icon message">
+  <i class="hand spock icon"></i>
+
+  <div class="content">
+    <div class="header">
+      Good day, commander. Be aware that this software is still in alpha, and many things may or may not be broken.
+    </div>
+  </div>
+</div>
+
+<div class="ui segment">
+  <div class="ui relaxed items">
+    {{#each alliances as |alliance|}}
+      <div class="item">
+        <div class="ui tiny image">
+          <img src={{alliance-image alliance.allianceId}} />
+        </div>
+
+        <div class="middle aligned content">
+
+          <div class="header">{{alliance.name}}</div>
+
+          <div class="meta">
+            {{!-- <span>{{alliance.memberCount}} pilots</span> --}}
+            <span>{{alliance.doctrines.length}} doctrines</span>
+          </div>
+
+          <div class="extra">
+            <div class="two buttons">
+              <div class="ui tiny basic button">View {{alliance.ticker}} doctrines</div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    {{/each}}
+
+    {{#each corporations as |corporation|}}
+      <div class="item">
+        <div class="ui tiny image">
+          <img src={{corporation-image corporation.corporationId}} />
+        </div>
+
+        <div class="middle aligned content">
+
+          <div class="header">{{corporation.name}}</div>
+
+          <div class="meta">
+            {{!-- <span>{{corporation.memberCount}} pilots</span> --}}
+            <span>{{corporation.doctrines.length}} doctrines</span>
+          </div>
+
+          <div class="extra">
+            <div class="two buttons">
+              {{#link-to "corporation.doctrines" corporation.id class="ui tiny basic button"}}
+                View {{corporation.ticker}} doctrines
+              {{/link-to}}
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    {{/each}}
+  </div>
 </div>
 
 {{outlet}}
