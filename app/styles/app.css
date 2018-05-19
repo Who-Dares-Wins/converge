@@ -1,0 +1,54 @@
+/* body {
+  background: url('/assets/img/bg.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.container {
+  background: #fefefe;
+  box-shadow: 0 3px 3px #666;
+  padding: 0;
+} */
+
+@import 'css/semantic.css';
+
+:root {
+  --primary: #B2F6FF;
+  --background: #22212f;
+  --background-dark: #0F0D1F;
+  --background-alt: #161523;
+}
+
+body {
+  background: var(--background) !important;
+}
+
+body > .ember-view,
+body > .ember-view > .pushable {
+  height: 100%;
+  margin-top: 0;
+}
+
+.brand {
+  font-weight: 300 !important;
+  font-size: 1.2rem;
+  text-transform: uppercase !important;
+  letter-spacing: 5px;
+  color: var(--primary) !important;
+}
+
+.background-dark {
+  background-color: var(--background-dark) !important;
+}
+
+.background-alt {
+  background-color: var(--background-alt) !important;
+}
+
+.image-holographic {
+  filter: sepia() saturate(50%) hue-rotate(150deg) brightness(1);
+}
+
+.image-holographic:hover {
+  filter: unset;
+}

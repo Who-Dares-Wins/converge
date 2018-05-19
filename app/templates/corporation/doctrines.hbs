@@ -1,151 +1,244 @@
-<div class="ui menu secondary">
-  <div class="header item">Show</div>
+<div class="ui segment">
+  <div class="ui menu secondary">
+    <div class="header item">Show</div>
 
-  <a class="active item">
-    Active
-  </a>
+    <a class="active item">
+      Active
+    </a>
 
-  <a class="item">
-    Inactive
-  </a>
+    <a class="item">
+      Inactive
+    </a>
 
-  <div class="right menu">
-    <div class="item">
-      <div class="ui transparent icon input">
-        <input placeholder="Search..." type="text">
-        <i class="search link icon"></i>
+    <div class="right menu">
+      <div class="item">
+        <div class="ui transparent icon input">
+          <input placeholder="Search..." type="text">
+          <i class="search link icon"></i>
+        </div>
+      </div>
+
+      <div class="item">
+        <button class="ui secondary right labeled icon button" {{action 'createDoctrine'}}>
+          <i class="plus icon"></i>
+          Doctrine
+        </button>
       </div>
     </div>
+  </div>
 
-    <div class="item">
-      <button class="ui right labeled icon button green" {{action 'createDoctrine'}}>
-        <i class="plus icon"></i>
-        Doctrine
-      </button>
+  {{#if message}}
+    <div class="ui {{message.type}} message">
+      <button class="close icon" {{action 'closeMessage'}}></button>
+      <div class="header">
+        {{message.header}}
+      </div>
+
+      {{#if message.text}}
+        <p>{{message.text}}</p>
+      {{/if}}
     </div>
+  {{/if}}
+
+  <div class="ui segment">
+
+    <table class="ui striped celled table">
+      <thead>
+        <tr>
+          <th>Priority</th>
+          <th>Name</th>
+          <th>Description</th>
+          <th>Fittings</th>
+          <th>Readiness</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        {{#each (sort-by 'priority' model.doctrines) as |doctrine|}}
+          {{#if (and doctrineToEdit (eq doctrineToEdit.id doctrine.id))}}
+            <tr class="ui form">
+              <td>
+                <div class="field">
+                  {{#ui-dropdown onChange=(action (mut doctrineToEdit.priority))}}
+                    <div class="default text">Not set</div>
+                    <i class="dropdown icon"></i>
+                    <div class="menu">
+                      {{#each priorities as |priority|}}
+                        <div data-value="{{priority}}" class="item">
+                          {{priority}}
+                        </div>
+                      {{/each}}
+                    </div>
+                  {{/ui-dropdown}}
+                </div>
+              </td>
+
+              <td>
+                <div class="field">
+                  {{input
+                    name="name"
+                    placeholder="Name"
+                    type="text"
+                    value=doctrineToEdit.name
+                    onChange=(action (mut doctrineToEdit.name))
+                    disabled=isSaving
+                    }}
+                </div>
+              </td>
+
+              <td>
+                <div class="field">
+                  {{input
+                    name="description"
+                    placeholder="Description"
+                    type="text"
+                    value=doctrineToEdit.description
+                    onChange=(action (mut doctrineToEdit.description))
+                    disabled=isSaving
+                    }}
+                </div>
+              </td>
+
+              <td class="disabled">None</td>
+
+              <td class="disabled">50%</td>
+
+              <td>
+                <button class="ui button small" {{action 'clearDoctrine' doctrineToEdit}}>
+                  Cancel
+                </button>
+
+                <button class="ui secondary right labeled small icon button" {{action 'saveDoctrine' doctrineToEdit}}>
+                  Save
+                  <i class="checkmark icon"></i>
+                </button>
+              </td>
+            </tr>
+          {{else}}
+            <tr>
+              <td>{{doctrine.priority}}</td>
+
+              <td>
+                <strong>{{doctrine.name}}</strong>
+              </td>
+
+              <td>{{doctrine.description}}</td>
+
+              <td>
+                {{#each doctrine.fittings as |fitting|}}
+                  TODO
+                {{else}}
+                  None
+                {{/each}}
+              </td>
+
+              <td class="warning"><i class="attention icon"></i> 50%</td>
+
+              <td>
+                {{#if doctrine.id}}
+                  <button class="ui button small" {{action 'editDoctrine' doctrine}}>
+                    Edit
+                  </button>
+                {{/if}}
+
+                {{#if doctrine.id}}
+                  {{#link-to 'doctrines.doctrine.edit' doctrine class="ui button small"}}
+                    Manage
+                  {{/link-to}}
+                {{/if}}
+
+                {{#if doctrine.id}}
+                  <button class="ui button small negative" {{action 'deleteDoctrine' doctrine}}>
+                    Delete
+                  </button>
+                {{/if}}
+              </td>
+            </tr>
+          {{/if}}
+        {{/each}}
+
+        {{#if doctrineToAdd}}
+          <tr class="ui form">
+            <td>
+              <div class="field">
+                {{#ui-dropdown onChange=(action (mut doctrineToAdd.priority))}}
+                  <div class="default text">Not set</div>
+                  <i class="dropdown icon"></i>
+                  <div class="menu">
+                    {{#each priorities as |priority|}}
+                      <div data-value="{{priority}}" class="item">
+                        {{priority}}
+                      </div>
+                    {{/each}}
+                  </div>
+                {{/ui-dropdown}}
+              </div>
+            </td>
+
+            <td>
+              <div class="field">
+                {{input
+                  name="name"
+                  placeholder="Name"
+                  type="text"
+                  value=doctrineToAdd.name
+                  onChange=(action (mut doctrineToAdd.name))
+                  disabled=isSaving
+                  }}
+              </div>
+            </td>
+
+            <td>
+              <div class="field">
+                {{input
+                  name="description"
+                  placeholder="Description"
+                  type="text"
+                  value=doctrineToAdd.description
+                  onChange=(action (mut doctrineToAdd.description))
+                  disabled=isSaving
+                  }}
+              </div>
+            </td>
+
+            <td class="disabled">None</td>
+
+            <td class="disabled">50%</td>
+
+            <td>
+              <button class="ui button small" {{action 'clearDoctrine' doctrineToAdd}}>
+                Cancel
+              </button>
+
+              <button class="ui positive right labeled small icon button" {{action 'saveDoctrine' doctrineToAdd}}>
+                Create
+                <i class="checkmark icon"></i>
+              </button>
+            </td>
+          </tr>
+        {{/if}}
+      </tbody>
+
+      <tfoot>
+        <tr>
+          <th colspan="6">
+            {{!-- <div class="ui right floated pagination menu">
+              <a class="icon item">
+                <i class="left chevron icon"></i>
+              </a>
+              <a class="item">1</a>
+              <a class="item">2</a>
+              <a class="item">3</a>
+              <a class="item">4</a>
+              <a class="icon item">
+                <i class="right chevron icon"></i>
+              </a>
+            </div> --}}
+          </th>
+        </tr>
+      </tfoot>
+    </table>
+
   </div>
 </div>
-
-<table class="ui celled table">
-  <thead>
-    <tr>
-      <th>Priority</th>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Fittings</th>
-      {{#if isAdmin}}
-        <th>Readiness</th>
-      {{/if}}
-      <th>Actions</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    {{#each model.doctrines as |doctrine|}}
-      <tr>
-        <td>{{doctrine.priority}}</td>
-
-        <td>{{doctrine.name}}</td>
-
-        <td>{{doctrine.description}}</td>
-
-        <td>{{doctrine.fittings.length}}</td>
-
-        {{#if isAdmin}}
-          <td class="warning"><i class="attention icon"></i> 50%</td>
-        {{/if}}
-
-        <td>
-          {{#if doctrine.hasDirtyAttributes}}
-            <button class="ui button small" {{action 'saveDoctrine' doctrine}}>
-              Save
-            </button>
-          {{/if}}
-
-          {{#if doctrine.id}}
-            <button class="ui button small negative" {{action 'deleteDoctrine' doctrine}}>
-              Delete
-            </button>
-          {{/if}}
-        </td>
-      </tr>
-    {{/each}}
-
-    {{#if (eq model.doctrines.length 0)}}
-      No data.
-    {{/if}}
-  </tbody>
-
-  <tfoot>
-    <tr>
-      <th colspan="6">
-        <div class="ui right floated pagination menu">
-          <a class="icon item">
-            <i class="left chevron icon"></i>
-          </a>
-          <a class="item">1</a>
-          <a class="item">2</a>
-          <a class="item">3</a>
-          <a class="item">4</a>
-          <a class="icon item">
-            <i class="right chevron icon"></i>
-          </a>
-        </div>
-      </th>
-    </tr>
-  </tfoot>
-</table>
-
-{{#ui-modal name="doctrine" class="doctrine" onApprove=(action 'saveDoctrine') onDeny=(action 'clearDoctrine')}}
-  <i class="close icon"></i>
-
-  <div class="header">
-    New doctrine
-  </div>
-
-  <div class="text content">
-
-    <div class="description">
-      
-      <form class="ui form">
-        <div class="field">
-          {{input name="name" placeholder="The official name of this doctrine" type="text" value=doctrine.name onChange=(action (mut doctrine.name))}}
-        </div>
-
-        <div class="field">
-          {{input name="description" placeholder="A few words to describe it" type="text" value=doctrine.description onChange=(action (mut doctrine.description))}}
-        </div>
-
-        <div class="field">
-          {{#ui-dropdown class="selection" onChange=(action (mut doctrine.priority))}}
-            <div class="default text">Not set</div>
-            <i class="dropdown icon"></i>
-            <div class="menu">
-              {{#each priorities as |priority|}}
-                <div data-value="{{priority}}" class="item">
-                  {{priority}}
-                </div>
-              {{/each}}
-            </div>
-          {{/ui-dropdown}}
-        </div>
-
-      </form>
-
-    </div>
-
-  </div>
-
-  <div class="actions">
-
-    <button class="ui black deny button">
-      Cancel
-    </button>
-
-    <button class="ui positive right labeled icon button" {{action 'saveDoctrine' doctrine}}>
-      Create doctrine
-      <i class="checkmark icon"></i>
-    </button>
-
-  </div>
-{{/ui-modal}}

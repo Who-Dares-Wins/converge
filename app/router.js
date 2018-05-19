@@ -15,6 +15,9 @@ Router.map(function() {
 
   this.route('corporation', { path: '/corporation/:id' });
   this.route('corporation.doctrines', { path: '/corporation/:id/doctrines' });
+
+  this.route('doctrines.doctrine', { path: '/doctrines/:id' });
+  this.route('doctrines.doctrine.edit', { path: '/doctrines/:id/edit' });
 });
 
 export default Router;

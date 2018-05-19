@@ -1,0 +1,7 @@
+/*******************************
+         Site Overrides
+*******************************/
+
+.ui.vertical.menu .active.item {
+  border-left: 3px #B2F6FF solid;
+}

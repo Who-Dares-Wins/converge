@@ -1,0 +1,25 @@
+/*******************************
+    User Variable Overrides
+*******************************/
+
+@background: transparent;
+@textColor: #fefefe;
+@textTransform: uppercase;
+@fontWeight: 300;
+@transition: 175ms background-color ease;
+@borderRadius: 2px;
+
+@hoverBackgroundColor: rgba(178, 246, 255, 0.2);
+@hoverColor: @textColor;
+
+@negativeColor: @background;
+@negativeColorHover: @hoverBackgroundColor;
+@negativeTextColor: #DB698A;
+
+@basicBackground: @background;
+@basicHoverBackground: transparent;
+@basicDownBackground: transparent;
+@basicActiveBackground: transparent;
+@basicTextTransform: @textTransform;
+@basicHoverTextColor: #B2F6FF;
+@basicActiveTextColor: @basicHoverTextColor;

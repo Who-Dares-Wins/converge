@@ -1,13 +1,44 @@
-<div class="ui grid container">
+{{#if account}}
+  {{nav-bar
+    account=account
+    logout=(route-action 'logout')
+    }}
+{{/if}}
 
-  <div class="sixteen wide column">
-    {{#if account}}
-      {{nav-bar
-        account=account
-        logout=(route-action 'logout')
-        }}
-    {{/if}}
+<div class="ui segment component context">
+  {{#ui-sidebar class="visible overlay inverted left inline vertical background-dark" context=".component.context" id="sub-sidebar" dimPage=false closable=false}}
+    <div style="padding-top: 32px;"></div>
+    <div class="ui fluid inverted vertical menu">
+      {{#link-to "home" classNames="item"}}
+        <i class="space shuttle inverted icon"></i>
 
-    {{outlet}}
+        <span class="primary">Doctrines</span>
+
+        {{!-- <div class="menu">
+          <a class="item">Search</a>
+          <a class="item">Add</a>
+          <a class="item">Remove</a>
+        </div> --}}
+      {{/link-to}}
+
+      {{#link-to "doctrines" classNames="item"}}
+        <i class="left align inverted icon"></i>
+
+        <span class="primary">Stuff</span>
+
+        {{!-- <div class="menu">
+          <a class="item">Search</a>
+          <a class="item">Add</a>
+          <a class="item">Remove</a>
+        </div> --}}
+      {{/link-to}}
+
+    </div>
+  {{/ui-sidebar}}
+
+  <div class="ui padded grid" style="padding-left: 260px;">
+    <div class="sixteen wide column" style="padding-top: 4.5rem;">
+      {{outlet}}
+    </div>
   </div>
 </div>

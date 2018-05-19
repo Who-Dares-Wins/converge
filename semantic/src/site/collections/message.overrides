@@ -1,0 +1,14 @@
+/*******************************
+        Site Overrides
+*******************************/
+
+.ui.message .header {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.ui.message p {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 200;
+}

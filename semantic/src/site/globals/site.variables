@@ -1,0 +1,23 @@
+/*******************************
+     User Global Variables
+*******************************/
+
+@primaryColor: #B2F6FF;
+@secondaryColor: #3B4E6B;
+@background: #22212f;
+@textColor: #fefefe;
+
+@fontName : 'Titillium Web';
+
+@linkColor: @primaryColor;
+@linkHoverColor: white;
+@linkHoverUnderline: none;
+
+@defaultBorderRadius: 2px;
+@borderColor: #222D3D;
+@selectedBorderColor: @primaryColor;
+
+@infoBackgroundColor: transparent;
+@infoTextColor: @secondaryColor;
+@warningTextColor: #FBB03B;
+@errorTextColor: #DB698A;

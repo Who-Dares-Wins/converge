@@ -12,7 +12,7 @@ module.exports = function(defaults) {
 
     SemanticUI: {
       import: {
-        css: true,
+        css: false,
         javascript: true,
         images: true,
         fonts: true

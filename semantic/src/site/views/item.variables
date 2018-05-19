@@ -1,0 +1,7 @@
+/*******************************
+    User Variable Overrides
+*******************************/
+
+@headerFontWeight: 300;
+@headerColor: #fefefe;
+@metaColor: #B2F6FF;

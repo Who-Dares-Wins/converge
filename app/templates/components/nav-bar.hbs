@@ -1,12 +1,16 @@
-{{#link-to "home" classNames="item"}} Home {{/link-to}}
-{{#link-to "doctrines" classNames="item"}} Doctrines {{/link-to}}
-{{#link-to "fittings" classNames="item"}} Fittings {{/link-to}}
+<a class="item brand">
+  <i class="crosshairs icon"></i>
+
+  <strong>Converge</strong>
+</a>
+
+{{!-- {{#link-to "home" classNames="item"}} Home {{/link-to}} --}}
 
 <div class="right compact menu">
   <div class="ui inline simple dropdown item">
     <div class="text">
       {{#each account.characters as |character|}}
-        <img class="ui avatar image" src={{character-portrait id=character.characterId size=64}} />
+        <img class="ui avatar image image-holographic" src={{character-portrait id=character.characterId size=64}} />
       {{/each}}
     </div>
 

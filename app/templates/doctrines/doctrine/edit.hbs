@@ -1,0 +1,45 @@
+<div class="ui clearing segment">
+  <h1 class="ui header">
+    {{model.name}}
+  </h1>
+
+  <div class="ui horizontal list">
+    <div class="item">
+      <i class="align left circular icon"></i>
+      <div class="content">
+        <div class="ui sub header">Description</div>
+        {{model.description}}
+      </div>
+    </div>
+
+    <div class="item">
+      <i class="space shuttle circular icon"></i>
+      <div class="content">
+        <div class="ui sub header">Fittings</div>
+        {{model.fittings.length}} total
+      </div>
+    </div>
+
+    <div class="item">
+      <i class="percent circular icon"></i>
+      <div class="content">
+        <div class="ui sub header">Readiness</div>
+        {{model.readiness}}
+      </div>
+    </div>
+
+    <div class="item">
+      <i class="exclamation triangle circular icon"></i>
+      <div class="content">
+        <div class="ui sub header">Priority</div>
+        {{model.priority}}
+      </div>
+    </div>
+  </div>
+
+  {{#each model.fittings as |fitting|}}
+    <div class="ui left floated segment">
+      {{fitting.name}}
+    </div>
+  {{/each}}
+</div>

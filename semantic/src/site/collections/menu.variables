@@ -1,0 +1,12 @@
+/*******************************
+    User Variable Overrides
+*******************************/
+
+@invertedBackground: #22212f;
+@itemTextTransform: uppercase;
+@secondaryActiveItemColor: #B2F6FF;
+@secondaryHoverItemColor: @secondaryActiveItemColor;
+@secondaryActiveHoverItemColor: @secondaryActiveItemColor;
+@verticalIconFloat: left;
+@verticalIconMargin: 0 1rem 0 0;
+@borderRadius: 0;

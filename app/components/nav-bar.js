@@ -1,5 +1,5 @@
 import Component from '@ember/component';
 
 export default Component.extend({
-  classNames: 'ui menu inverted'
+  classNames: 'ui inverted menu top fixed background-alt'
 });

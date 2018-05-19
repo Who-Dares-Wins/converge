@@ -1,0 +1,12 @@
+/*******************************
+         Site Overrides
+*******************************/
+
+.ui.button:hover {
+  background: linear-gradient(transparent, rgba(178, 246, 255, 0.2));
+}
+
+.ui.negative.buttons .button:hover,
+.ui.negative.button:hover {
+  background: linear-gradient(transparent, rgba(219, 105, 138, 0.2));
+}

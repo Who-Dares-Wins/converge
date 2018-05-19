@@ -1,0 +1,13 @@
+/*******************************
+    User Variable Overrides
+*******************************/
+
+@background: #22212f;
+@stripedBackground: #242331;
+@headerBackground: #232635;
+@headerColor: #9fb4b7;
+@headerFontWeight: 600;
+@headerTextTransform: uppercase;
+
+@warningBackgroundColor: @background;
+@footerBackground: @headerBackground;

@@ -1,8 +1,13 @@
 import Controller from '@ember/controller';
 import { computed } from '@ember/object';
-
+import { reads } from '@ember/object/computed';
+import { inject as service } from '@ember/service';
 
 export default Controller.extend({
+
+  session: service(),
+
+  account: reads('session.account'),
 
   alliances: computed('model.characters', function() {
     let characters = this.get('model.characters');
@@ -11,7 +16,7 @@ export default Controller.extend({
     characters.map((character) => {
       let alliance = character.get('alliance');
 
-      if (alliance)
+      if (alliance.get('id'))
         alliances.push(alliance);
     });
 

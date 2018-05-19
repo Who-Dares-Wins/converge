@@ -1,0 +1,6 @@
+/*******************************
+    User Variable Overrides
+*******************************/
+
+@fontWeight: 300;
+@textTransform: uppercase;

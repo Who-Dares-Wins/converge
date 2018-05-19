@@ -1,0 +1,11 @@
+/*******************************
+    User Variable Overrides
+*******************************/
+
+.ui.items > .item > .content > .header {
+  text-transform: uppercase;
+}
+
+.ui.items > .item .meta {
+  text-transform: uppercase;
+}

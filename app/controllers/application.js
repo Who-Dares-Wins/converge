@@ -6,6 +6,14 @@ export default Controller.extend({
 
   session: service(),
 
-  account: reads('session.account')
+  account: reads('session.account'),
+
+  // actions: {
+  //   openMenu() {
+  //     $('.ui.sidebar')
+  //       .sidebar('setting', 'transition', 'overlay')
+  //       .sidebar('toggle');
+  //   }
+  // }
 
 });
