@@ -2,7 +2,7 @@
     User Variable Overrides
 *******************************/
 
-@invertedBackground: #22212f;
+@invertedBackground: transparent;
 @itemTextTransform: uppercase;
 @secondaryActiveItemColor: #B2F6FF;
 @secondaryHoverItemColor: @secondaryActiveItemColor;
@@ -10,3 +10,4 @@
 @verticalIconFloat: left;
 @verticalIconMargin: 0 1rem 0 0;
 @borderRadius: 0;
+@dropdownItemBackground: #161523;

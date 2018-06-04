@@ -1614,7 +1614,7 @@ body .ui.inverted::-webkit-scrollbar-thumb:hover {
 .ui.basic.buttons .button:active,
 .ui.basic.button:active {
   background: transparent !important;
-  color: rgba(0, 0, 0, 0.9) !important;
+  color: #B2F6FF !important;
   -webkit-box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.15) inset, 0px 1px 4px 0px #222D3D inset;
   box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.15) inset, 0px 1px 4px 0px #222D3D inset;
 }
@@ -19707,7 +19707,7 @@ ol.ui.horizontal.list li:before,
   line-height: 1.21428571em;
   padding: 0.67857143em 1em;
   font-size: 1em;
-  background: #FFFFFF;
+  background: transparent;
   border: 1px solid #222D3D;
   color: #fefefe;
   border-radius: 0.28571429rem;
@@ -19724,7 +19724,7 @@ ol.ui.horizontal.list li:before,
   -webkit-appearance: none;
   tap-highlight-color: rgba(255, 255, 255, 0);
   padding: 0.78571429em 1em;
-  background: #FFFFFF;
+  background: transparent;
   border: 1px solid #222D3D;
   outline: none;
   color: #fefefe;
@@ -19991,19 +19991,19 @@ ol.ui.horizontal.list li:before,
 .ui.form input[type="text"]:focus,
 .ui.form input[type="file"]:focus,
 .ui.form input[type="url"]:focus {
-  color: rgba(0, 0, 0, 0.95);
+  color: white;
   border-color: #85B7D9;
   border-radius: 0.28571429rem;
-  background: #FFFFFF;
+  background: transparent;
   -webkit-box-shadow: 0px 0em 0em 0em #B2F6FF inset;
   box-shadow: 0px 0em 0em 0em #B2F6FF inset;
 }
 
 .ui.form textarea:focus {
-  color: rgba(0, 0, 0, 0.95);
+  color: white;
   border-color: #85B7D9;
   border-radius: 0.28571429rem;
-  background: #FFFFFF;
+  background: transparent;
   -webkit-box-shadow: 0px 0em 0em 0em #B2F6FF inset;
   box-shadow: 0px 0em 0em 0em #B2F6FF inset;
   -webkit-appearance: none;
@@ -20384,7 +20384,7 @@ ol.ui.horizontal.list li:before,
 .ui.inverted.form input[type="text"],
 .ui.inverted.form input[type="file"],
 .ui.inverted.form input[type="url"] {
-  background: #FFFFFF;
+  background: transparent;
   border-color: rgba(255, 255, 255, 0.1);
   color: #fefefe;
   -webkit-box-shadow: none;
@@ -23336,7 +23336,7 @@ ol.ui.horizontal.list li:before,
   text-align: left;
   font-size: 1em !important;
   padding: 0.78571429em 1.14285714em !important;
-  background: transparent !important;
+  background: #161523 !important;
   color: #fefefe !important;
   text-transform: none !important;
   font-weight: normal !important;
@@ -24608,7 +24608,7 @@ Floated Menu / Item
 
 .ui.inverted.menu {
   border: 0px solid transparent;
-  background: #22212f;
+  background: transparent;
   -webkit-box-shadow: none;
   box-shadow: none;
 }
@@ -31656,7 +31656,7 @@ body.dimmable > .dimmer {
   min-width: max-content;
   margin: 0em;
   padding: 0em 0em;
-  background: #FFFFFF;
+  background: #22212f;
   font-size: 1em;
   text-shadow: none;
   text-align: left;
@@ -32447,7 +32447,7 @@ select.ui.dropdown {
 
 .ui.dropdown .menu > .item:hover {
   background: rgba(0, 0, 0, 0.05);
-  color: rgba(0, 0, 0, 0.95);
+  color: #B2F6FF;
   z-index: 13;
 }
 

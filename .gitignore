@@ -22,4 +22,7 @@ testem.log
 bower.json.ember-try
 package.json.ember-try
 
+# semantic-ui
+/public/assets/css/*
+
 .env

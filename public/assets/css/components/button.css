@@ -773,7 +773,7 @@
 .ui.basic.buttons .button:active,
 .ui.basic.button:active {
   background: transparent !important;
-  color: rgba(0, 0, 0, 0.9) !important;
+  color: #B2F6FF !important;
   -webkit-box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.15) inset, 0px 1px 4px 0px #222D3D inset;
           box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.15) inset, 0px 1px 4px 0px #222D3D inset;
 }

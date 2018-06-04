@@ -47,7 +47,7 @@
   min-width: max-content;
   margin: 0em;
   padding: 0em 0em;
-  background: #FFFFFF;
+  background: #22212f;
   font-size: 1em;
   text-shadow: none;
   text-align: left;
@@ -776,7 +776,7 @@ select.ui.dropdown {
 /* Menu Item Hover */
 .ui.dropdown .menu > .item:hover {
   background: rgba(0, 0, 0, 0.05);
-  color: rgba(0, 0, 0, 0.95);
+  color: #B2F6FF;
   z-index: 13;
 }
 

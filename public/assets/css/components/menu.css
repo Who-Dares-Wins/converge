@@ -238,7 +238,7 @@
   text-align: left;
   font-size: 1em !important;
   padding: 0.78571429em 1.14285714em !important;
-  background: transparent !important;
+  background: #161523 !important;
   color: #fefefe !important;
   text-transform: none !important;
   font-weight: normal !important;
@@ -1384,7 +1384,7 @@ Floated Menu / Item
 
 .ui.inverted.menu {
   border: 0px solid transparent;
-  background: #22212f;
+  background: transparent;
   -webkit-box-shadow: none;
           box-shadow: none;
 }

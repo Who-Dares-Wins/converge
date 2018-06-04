@@ -1,3 +1,6 @@
 /*******************************
     User Variable Overrides
 *******************************/
+
+@menuBackground: #22212f;
+@hoveredItemColor: #B2F6FF;
